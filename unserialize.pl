@@ -145,12 +145,12 @@ sub readutf8string {
 	} elsif ( $ord>=0xe0 && $ord<0xf0 ) {
 	    my $ord2 = ord(readchar);
 	    my $ord3 = ord(readchar);
-	    $buf .= chr(($ord&0x1f)<<12 | ($ord2&0x3f)<<6 | ($ord3&0x3f));
+	    $buf .= chr(($ord&0x0f)<<12 | ($ord2&0x3f)<<6 | ($ord3&0x3f));
 	} elsif ( $ord>=0xf0 && $ord<0xf8 ) {
 	    my $ord2 = ord(readchar);
 	    my $ord3 = ord(readchar);
 	    my $ord4 = ord(readchar);
-	    $buf .= chr(($ord&0x1f)<<18 | ($ord2&0x3f)<<12 | ($ord3&0x3f)<<6 | ($ord4&0x3f));
+	    $buf .= chr(($ord&0x07)<<18 | ($ord2&0x3f)<<12 | ($ord3&0x3f)<<6 | ($ord4&0x3f));
 	    $len--;
 	    die "Tried to split a surrogate" if $len<=0;
 	}
