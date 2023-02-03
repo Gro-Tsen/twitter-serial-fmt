@@ -144,7 +144,8 @@ thread](https://twitter.com/gro_tsen/status/1621455828271206401).
 
 * More mysterious:
   - 0x4d (type=9=start\_object, subtype=5=long?) seems to be a start
-    of object (array, maybe?).
+    of object as well.  Probably representing a tuple, or array, or
+    something like that.
   - 0x82 (type=17=???, subtype=2=byte) seems to be followed by a single
     byte.  Meaning unclear.
 
